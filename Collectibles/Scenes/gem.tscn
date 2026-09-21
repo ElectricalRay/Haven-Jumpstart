@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://2p43gtvenocf"]
+
+[ext_resource type="Script" uid="uid://bsf78boi8d7eh" path="res://Collectibles/Scripts/gem.gd" id="1_3y4k2"]
+[ext_resource type="Texture2D" uid="uid://c6a6jw17eoc0w" path="res://Collectibles/Assets/spr_coin_strip4.png" id="2_lomti"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otcyw"]
+atlas = ExtResource("2_lomti")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68t4k"]
+atlas = ExtResource("2_lomti")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xswus"]
+atlas = ExtResource("2_lomti")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88pkf"]
+atlas = ExtResource("2_lomti")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g28dt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otcyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68t4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xswus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88pkf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g28dt"]
+radius = 5.0
+height = 14.0
+
+[node name="Gem" type="Node2D" unique_id=1745146780]
+script = ExtResource("1_3y4k2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=696559374]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_g28dt")
+autoplay = "default"
+frame_progress = 0.8601628
+
+[node name="Area2D" type="Area2D" parent="." unique_id=256240024]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=55436790]
+shape = SubResource("CapsuleShape2D_g28dt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

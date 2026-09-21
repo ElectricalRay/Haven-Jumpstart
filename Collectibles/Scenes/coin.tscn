@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cfjxoym4t871b"]
+
+[ext_resource type="Script" uid="uid://ob3ar8cmp674" path="res://Collectibles/Scripts/coin.gd" id="1_mqgkl"]
+[ext_resource type="Texture2D" uid="uid://benq03qigotgn" path="res://Collectibles/Assets/MonedaD.png" id="1_xciik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqgkl"]
+atlas = ExtResource("1_xciik")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g1mr"]
+atlas = ExtResource("1_xciik")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3euex"]
+atlas = ExtResource("1_xciik")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh3x8"]
+atlas = ExtResource("1_xciik")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq7yl"]
+atlas = ExtResource("1_xciik")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g28dt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqgkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g1mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3euex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh3x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq7yl")
+}],
+"loop": 1,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_msg50"]
+radius = 7.0
+
+[node name="Coin" type="Node2D" unique_id=539896161]
+script = ExtResource("1_mqgkl")
+value = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=857327099]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_g28dt")
+animation = &"spin"
+autoplay = "spin"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=863261674]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=56239064]
+shape = SubResource("CircleShape2D_msg50")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
