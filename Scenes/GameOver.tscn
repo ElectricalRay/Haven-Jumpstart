@@ -99,20 +99,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_5mu6e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8710x")
 text = "Main Menu"
 
-[node name="Button3" type="Button" parent="MainButtons" unique_id=1337605278]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_rdiyk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bfgkh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5mu6e")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_8710x")
-text = "Quit"
-
 [node name="Label" type="Label" parent="." unique_id=1917394821]
 layout_mode = 1
 anchors_preset = 8
@@ -149,4 +135,3 @@ scale = Vector2(2, 2)
 
 [connection signal="pressed" from="MainButtons/Button" to="." method="_on_again_pressed"]
 [connection signal="pressed" from="MainButtons/Button2" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="MainButtons/Button3" to="." method="_on_quit_pressed"]

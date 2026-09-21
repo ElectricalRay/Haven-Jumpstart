@@ -107,20 +107,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_c4tk2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rmbjf")
 text = "Options"
 
-[node name="Button3" type="Button" parent="MainButtons" unique_id=1348374653]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_g28dt")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hckgo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_c4tk2")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_rmbjf")
-text = "Exit"
-
 [node name="Label" type="Label" parent="." unique_id=919132038]
 layout_mode = 1
 anchors_preset = 8
@@ -232,6 +218,5 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Button2" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MainButtons/Button3" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_options_pressed"]
 [connection signal="value_changed" from="Options/AudioControl" to="Options/AudioControl" method="_on_value_changed"]

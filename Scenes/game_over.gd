@@ -18,7 +18,3 @@ func _on_again_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Main_Menu.tscn")
-
-
-func _on_quit_pressed() -> void:
-	get_tree().quit()
